@@ -22,13 +22,15 @@ json decode_string(const std::string& encoded_value) {
 
 json decode_integer(const std::string &encoded_value) {
     std::string integer_value = "";
-    for (size_t i = 1; i < encoded_value.size(); i++) {
+    size_t i = 1;
+    while (i < encoded_value.size()) {
         if (encoded_value[i] == 'e') {
             break;
         } else {
             integer_value += encoded_value[i];
         }
     }
+    std::cout << integer_value << " " << integer_value.c_str() << std::endl; 
     return json(std::atoi(integer_value.c_str()));
 }
 
