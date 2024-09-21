@@ -29,7 +29,7 @@ json decode_integer(const std::string &encoded_value) {
             integer_value += encoded_value[i];
         }
     }
-    return json(integer_value);
+    return json(std::atoi(integer_value));
 }
 
 json decode_bencoded_value(const std::string& encoded_value) {
