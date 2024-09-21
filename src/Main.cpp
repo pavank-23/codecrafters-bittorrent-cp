@@ -31,7 +31,6 @@ json decode_integer(const std::string &encoded_value) {
         }
         i++;
     }
-    std::cout << integer_value << " " << integer_value.c_str() << std::endl; 
     return json(std::atoi(integer_value.c_str()));
 }
 
